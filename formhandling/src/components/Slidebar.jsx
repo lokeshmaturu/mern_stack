@@ -14,6 +14,8 @@ function Sidebar() {
         <li>Orders</li>
         <li>Reports</li>
         <li onClick={() => navigate("/")}>Logout</li>
+        <li onClick={() => navigate("/products")}>Products</li>
+        <li onClick={() => navigate("/suppliers")}>Suppliers</li>
       </ul>
     </div>
   );

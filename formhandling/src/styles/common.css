@@ -1,0 +1,36 @@
+.page {
+  padding: 30px;
+  background: #f9fafb;
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.page h2 {
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th,
+.table td {
+  padding: 14px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table th {
+  background: #1f2937;
+  color: white;
+}
+
+.table tr:hover {
+  background: #f3f4f6;
+}
