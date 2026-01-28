@@ -1,0 +1,218 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #000;
+  overflow-x: hidden;
+}
+
+/* =========================
+   VIDEO HERO SECTION
+========================= */
+.video-hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Background video */
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.8)
+  );
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Title */
+.overlay h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+/* Subtitle */
+.overlay p {
+  max-width: 720px;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #e5e7eb;
+  margin-bottom: 35px;
+}
+
+/* =========================
+   HERO BUTTONS
+========================= */
+.hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+/* Common button */
+.hero-actions button {
+  padding: 14px 36px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Login button */
+.hero-actions button:first-child {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.hero-actions button:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.6);
+}
+
+/* Register button */
+.register-btn {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(34, 197, 94, 0.6);
+}
+
+/* =========================
+   MODAL POPUP
+========================= */
+.modal-bg {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+/* Modal box */
+.modal-box {
+  background: white;
+  width: 360px;
+  padding: 30px;
+  border-radius: 14px;
+  animation: popup 0.3s ease;
+  position: relative;
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #111827;
+}
+
+/* =========================
+   FORMS (LOGIN & REGISTER)
+========================= */
+form h3 {
+  text-align: center;
+  margin-bottom: 18px;
+  color: #111827;
+}
+
+form input {
+  width: 100%;
+  padding: 11px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+form input:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #111827;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background: #1f2937;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes popup {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 34px;
+  }
+
+  .overlay p {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-actions button {
+    width: 100%;
+  }
+
+  .modal-box {
+    width: 90%;
+  }
+}
