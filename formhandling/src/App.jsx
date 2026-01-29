@@ -13,7 +13,7 @@ function App() {
         {/* Dashboard Layout */}
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="products" element={<Products />} />
-          <Route path="suppliers" element={<Suppliers />} />
+          {/* <Route path="suppliers" element={<Suppliers />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
