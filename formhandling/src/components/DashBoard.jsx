@@ -1,24 +1,27 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "../styles/dashboard.css";
-import { Link } from "react-router-dom";
+
 function Dashboard() {
   return (
-    <div className="dashboard">
-      <div className="sidebar">
-        <h2>IMS</h2>
-        <ul>
-          <li><Link to="/dashboard/products">Products</Link></li>
-          <li><Link to="/dashboard/suppliers">Suppliers</Link></li>
-          <li><Link to="/">Logout</Link></li>
-        </ul>
-      </div>
+    <div className="dashboard-container">
+      {/* Sidebar */}
+      <aside className="sidebar">
+        <h2 className="logo">IMS</h2>
 
-      <div className="main-content">
-        <h2>Dashboard</h2>
+        <nav>
+          <Link to="/dashboard/products">📦 Products</Link>
+          <Link to="/dashboard/suppliers">🚚 Suppliers</Link>
+          <Link to="/">🚪 Logout</Link>
+        </nav>
+      </aside>
 
-        {/* 🔥 THIS IS WHERE PRODUCTS & SUPPLIERS APPEAR */}
+      {/* Main Content */}
+      <main className="dashboard-main">
+        <h1>Dashboard</h1>
+
+        {/* Pages will load here */}
         <Outlet />
-      </div>
+      </main>
     </div>
   );
 }
