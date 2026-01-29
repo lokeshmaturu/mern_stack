@@ -35,9 +35,9 @@ body {
 /* Dark overlay */
 .overlay {
   position: absolute;
-  inset: 0;
+  inset: 2;
   background: linear-gradient(
-    rgba(0, 0, 0, 0.65),
+    rgba(139, 6, 6, 0.65),
     rgba(0, 0, 0, 0.8)
   );
   color: white;
