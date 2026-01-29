@@ -10,7 +10,6 @@
   color: #111827;
 }
 
-/* Table */
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -22,7 +21,6 @@
 .table th,
 .table td {
   padding: 14px;
-  text-align: left;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -33,4 +31,13 @@
 
 .table tr:hover {
   background: #f3f4f6;
+}
+.button {
+  background: #3b82f6;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
 }
