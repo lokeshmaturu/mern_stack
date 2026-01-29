@@ -6,19 +6,27 @@
   min-height: 100vh;
   font-family: "Segoe UI", sans-serif;
 
-  /* Online background image */
-  background-image: url("C:\Users\matur\OneDrive\Desktop\mern_stack\formhandling\src\assets\basic.png");
+  background-image: url("../assets/basic.png");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
-/* Dark overlay for background */
+/* Dark overlay */
 .dashboard-container::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  z-index: -1;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+
+/* Ensure content appears above overlay */
+.sidebar,
+.dashboard-main {
+  position: relative;
+  z-index: 1;
 }
 
 /* =========================
@@ -31,11 +39,12 @@
   padding: 30px 20px;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(6px);
 }
 
 .logo {
   font-size: 26px;
-  font-weight: bold;
+  font-weight: 700;
   margin-bottom: 40px;
   text-align: center;
   letter-spacing: 1px;
@@ -44,20 +53,20 @@
 .sidebar nav {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
 }
 
 .sidebar nav a {
   color: #d1d5db;
   text-decoration: none;
-  padding: 12px 15px;
+  padding: 12px 16px;
   border-radius: 8px;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .sidebar nav a:hover {
   background: #2563eb;
-  color: white;
+  color: #ffffff;
 }
 
 /* =========================
@@ -66,23 +75,24 @@
 .dashboard-main {
   flex: 1;
   padding: 40px;
-  color: white;
+  color: #f9fafb;
 }
 
 .dashboard-main h1 {
   font-size: 32px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  font-weight: 600;
 }
 
 /* =========================
-   CONTENT CARD (FOR PAGES)
+   CONTENT CARD
 ========================= */
 .page {
   background: rgba(255, 255, 255, 0.95);
   color: #111827;
   padding: 30px;
-  border-radius: 14px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
 }
 
 /* =========================
@@ -92,21 +102,30 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .table th,
 .table td {
-  padding: 14px;
+  padding: 14px 16px;
   border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
 }
 
 .table th {
-  background: #1f2937;
-  color: white;
+  background: #1e293b;
+  color: #f9fafb;
+  font-weight: 600;
 }
 
 .table tr:hover {
-  background: #f3f4f6;
+  background: #f8fafc;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
 }
 
 /* =========================
@@ -120,10 +139,16 @@
   .sidebar {
     width: 100%;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .sidebar nav {
     flex-direction: row;
+    gap: 10px;
+  }
+
+  .dashboard-main {
+    padding: 20px;
   }
 }
